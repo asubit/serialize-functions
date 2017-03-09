@@ -37,7 +37,24 @@ Replace all non-filename characters by "-".
 
 Replaced characters : `*  |  \  /  .  :  ;  "  <  >  ?`
 
-3. No whitespaces
+3. Remove special caracters
+---------------------------
+
+Remove all special caracters.
+
+    $example = "Thìs ïs à %simplé¤#*example=)('"&²~#{[|\`\^@]}";
+    $clean = strtolower(
+        $this->removeNonFilenameCaract(
+            $this->removeSpecialCaract(
+                $this->removeAccent(
+                    $this->noWhitespace($example)
+                )
+            )
+        )
+    );
+    echo $clean; /* this-is-a-simple-example-- */
+
+4. No whitespaces
 -----------------
 
 Replace all whitespaces by "-".
@@ -46,7 +63,7 @@ Replace all whitespaces by "-".
     $clean = $this->noWhitespace($example);
     echo $clean; /* This-is-a-simple-example */
 
-4. No whitespaces at all
+5. No whitespaces at all
 ------------------------
 
 Remove all whitespaces.
