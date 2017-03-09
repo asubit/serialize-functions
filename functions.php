@@ -56,5 +56,10 @@
     $replace = '';
     return str_replace($supp, $replace, $str);
   }
-
+  public function removeSpecialCaract($str)
+  {
+    $supp = array('µ', '¨', '@', '%', '+', '#', '$', '€', '£', '¤', '~', '&', '²', '"', "'", '(', ')', '[', ']', '{', '}', '=', '°', '^', '`', '!', '§');
+    $replace = '';
+    return str_replace($supp, $replace, $str);
+  }
 ?>
